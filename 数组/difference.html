@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+</head>
+
+<body>
+    排除指定值
+    <script>
+        let arr1 = [1, 2, 3, 4, 5]
+        let arr2 = [{ name: '小李', age: 18 }, { name: '小赵', age: 20 }, { name: '小刘', age: 19 }]
+        console.log('difference', _.difference(arr1, [1, 2, 6]))
+        console.log('differenceBy', _.differenceBy(arr2, [{ name: '小李' }], 'name'))
+        console.log('differenceWith', _.differenceWith(arr2, [{ name: '小赵', age: 20 }], _.isEqual))
+    </script>
+</body>
+
+</html>
