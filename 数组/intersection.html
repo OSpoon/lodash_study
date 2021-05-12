@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>intersection</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+  </head>
+  <body>
+    获取交集
+    <script>
+      console.log(_.intersection([1, 2], [2, 3], [2, 8]));
+      console.log(
+        _.intersectionBy(
+          [
+            { name: "小王", age: 18 },
+            { name: "小李", age: 20 },
+          ],
+          [
+            { name: "小赵", age: 18 },
+            { name: "小刘", age: 21 },
+          ],
+          [
+            { name: "小韩", age: 18 },
+            { name: "小郭", age: 22 },
+          ],
+          "age"
+        )
+      );
+      console.log(
+        _.intersectionWith(
+          [
+            { name: "小王", age: 18 },
+            { name: "小李", age: 20 },
+          ],
+          [
+            { name: "小赵", age: 18 },
+            { name: "小李", age: 20 },
+          ],
+          _.isEqual
+        )
+      );
+    </script>
+  </body>
+</html>
