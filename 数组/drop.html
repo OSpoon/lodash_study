@@ -1,23 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drop</title>
     <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
-</head>
+  </head>
 
-<body>
-    去除N个元素
+  <body>
+    移除元素后返回剩余内容
     <script>
-        let arr1 = [1, 2, 3, 4, 5]
-        let arr2 = [{ name: '小李', age: 18 }, { name: '小赵', age: 20 }, { name: '小刘', age: 19 }]
-        console.log('drop', _.drop(arr1, 2))
-        console.log('dropRight :>> ', _.dropRight(arr1, 2));
-        console.log('dropWhile :>> ', _.dropWhile(arr2, { age: 18 }));
-    </script>
-</body>
+        let arr = [
+          { name: "小李", age: 18 },
+          { name: "小刘", age: 19 },
+          { name: "小赵", age: 20 },
+          { name: "小王", age: 21 },
+          { name: "小韩", age: 22 },
+        ];
+        // 移除前n个元素
+        console.log("drop", _.drop(arr, 2));
+        
+        // 移除后n个元素
+        console.log("dropRight :>> ", _.dropRight(arr, 2));
 
+        // 移除first=>条件为false的部分
+        console.log(
+          "dropWhile :>> ",
+          _.dropWhile(arr, function (o) {
+            return o.age < 20;
+          })
+        );
+
+        // 移除last=>条件为false的部分
+        console.log(
+          "dropRightWhile :>> ",
+          _.dropRightWhile(arr, function (o) {
+            return o.age > 20;
+          })
+        );
+    </script>
+  </body>
 </html>

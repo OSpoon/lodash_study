@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>findIndex</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/lodash.js/4.17.21/lodash.js"></script>
+  </head>
+  <body>
+    替换指定位置的内容
+    <script>
+      let arr = [
+        { name: "小李", age: 18 },
+        { name: "小刘", age: 19 },
+        { name: "小赵", age: 20 },
+        { name: "小王", age: 21 },
+        { name: "小韩", age: 22 },
+      ];
+      let index = _.findIndex(arr, (o) => o.age === 20);
+      console.log(index);
+
+      index = _.findIndex(arr, { name: "小王", age: 21 });
+      console.log(index);
+      
+      index = _.findLastIndex(arr, (o) => o.age === 20);
+      console.log(index);
+      
+      index = _.findLastIndex(arr, { name: "小刘", age: 19 });
+      console.log(index);
+    </script>
+  </body>
+</html>
